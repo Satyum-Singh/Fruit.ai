@@ -215,93 +215,173 @@ form .text h3 a:hover{
 
 /* About Us page */
 
+section {
+    display: grid;
+    background-color: #3c763d;
+    color: #c6f7c6;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+    width: 75vw;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+}
 
-.hero {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
+.image {
+    background-color: #12192c;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.image img {
+    height: 50vh;
+    margin: 0; 
+}
+
+.ice-cream {
+    position: relative;
+    display: block; 
+}
+
+.content {
+    background-color: #c6f7c6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3c763d;
+    height: 100%;
+    padding: 20px; 
+}
+
+.content h2 {
+    text-transform: uppercase;
+    color: #12192c;
+    font-size: 36px;
+    letter-spacing: 6px;
+    opacity: 0.9;
+}
+
+.content span {
+    height: 0.5px;
+    width: 80px;
+    background: #777;
+    margin-top: 10px;
+    margin-bottom:20px;
+}
+
+.content p {
+    padding-bottom: 15px;
+    font-weight: 500;
+    opacity: 0.7;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #3c763d;
+}
+
+.motto{
+  padding-top: 20px;
+}
+
+.bottom {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center; 
+    
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    list-style: none; 
+}
+
+.navi{
+  background-color: #12192c;
+  color: #c6f7c6;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #FFFFFF;
+    align-items: center;
+    justify-content: center; 
+    list-style: none;
 }
 
-.hero h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.navi a{
+  display: block;
+    padding: 5px;
+    margin: 0 10px;
+    text-decoration: none;
+    outline: none;
 }
 
-.company {
-  max-width: 800px;
-  width: 100%;
-  margin: 40px auto;
-  padding: 30px;
-  background: #FFFFFF; 
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+.icons li {
+    display: block;
+    padding: 5px;
+    margin: 0 10px; 
 }
 
-.company h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
+.icons li i {
+    font-size: 26px;
+    opacity: 0.8;
 }
 
-.team {
-  max-width: 800px;
-  width: 100%;
-  margin: 40px auto;
-  padding: 30px;
-  background: #FFFFFF; 
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+.icons li i:hover {
+    color: #12192c;
+    cursor: pointer;
 }
 
-.team h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
 
-.team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
+/*****************/
 
-.team-member img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+@media(max-width: 900px){
+    section{
+        grid-template-columns: 1fr;
+        width: 100%;
+        border-radius: none;
+    }
+    .image{
+        height: 100vh;
+        border-radius: none;
+    }
+    .content{
+        height: 100vh;
+        border-radius: none;
+    }
+    .content h2{
+        font-size: 20px;
+        margin-top: 50px;
+    }
+    .content span{
+        margin: 20px 0;
+    }
+    .content p{
+        font-size: 14px;
+    }
+    .links li a{
+        font-size: 14px;
+    }
+    .links{
+        margin: 5px 0;
+    }
+    .links li{
+        padding: 6px 10px;
+    }
+    .icons li i{
+        font-size: 15px;
+    }
 }
+.credit{
+    text-align: center;
+    color: #000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .credit a{
+    text-decoration: none;
+    color:#000;
+    font-weight: bold;
+  } 
 
-.team-member h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.team-member p {
-  font-size: 14px;
-  color: #666666;
-  margin-bottom: 20px;
-}
-
-.motto {
-  max-width: 800px;
-  width: 100%;
-  margin: 40px auto;
-  padding: 30px;
-  background: #FFFFFF; 
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: 600;
-  color: #FFC107; 
-}

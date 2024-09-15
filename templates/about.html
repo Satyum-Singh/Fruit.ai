@@ -8,33 +8,66 @@
       rel="stylesheet"
       href="{{ url_for('static',filename='css/styles.css')}}"
     />
+    <script
+      src="https://kit.fontawesome.com/dbed6b6114.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="hero"></div>
-    <img src="https://images.unsplash.com/photo-1556745754-8b15c4c7a9a4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="Fruit Orchard">
-    <h1>About Us</h1>
-  </div>
-  <div class="company">
-    <h2>Our Mission</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-  </div>
-  <div class="team">
-    <h2>Meet the Team</h2>
-    <div class="team-member">
-      <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="John Doe">
-      <h3>John Doe</h3>
-      <p>Founder & CEO. John has over 10 years of experience in the tech industry and is passionate about creating innovative solutions.</p>
-    </div>
-    <div class="team-member">
-      <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Jane Doe">
-      <h3>Jane Doe</h3>
-      <p>Co-Founder & CMO. Jane is an expert in marketing and branding, and is dedicated to building strong relationships with our customers.</p>
-    </div>
-    
-  </div>
-  <div class="motto">
-    <h2>Our Motto</h2>
-    <p>"Fresh ideas, ripe results."</p>
-  </div>
+    <section>
+      <div class="image">
+        <img
+          class="ice-cream"
+          src="{{ url_for('static', filename='images/ice-cream-8356877.png') }}"
+        />
+      </div>
+
+      <div class="content">
+        <h2>About Us</h2>
+        <span><!-- line here --></span>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
+          aspernatur voluptas inventore ab voluptates nostrum minus illo laborum
+          harum laudantium earum ut, temporibus fugiat sequi explicabo facilis
+          unde quos corporis!
+        </p>
+
+        <div class="motto">
+          <h2>Our Motto</h2>
+          <p>"Fresh ideas, ripe results."</p>
+        </div>
+        </div class="bottom">
+        <ul class="icons">
+          <li>
+            <i class="fa fa-twitter"></i>
+          </li>
+          <li>
+            <i class="fa fa-facebook"></i>
+          </li>
+          <li>
+            <i class="fa fa-github"></i>
+          </li>
+          <li>
+            <i class="fa fa-pinterest"></i>
+          </li>
+        </ul>
+
+        <ul class="navi">
+          <li></li>
+            <a>Home</a>
+          </li>
+          <li>
+            <a>Chatbot</a>
+          </li>
+          <li>
+            <a>Translator</a>
+          </li>
+          <li>
+            <a>FAQs</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </section>
   </body>
 </html>
