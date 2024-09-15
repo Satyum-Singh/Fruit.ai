@@ -37,7 +37,7 @@ body {
   width: 100%;
   padding: 20px 100px;
   color:#3c763d;
-  background: #c6f7c6;
+  background: #dfffdf;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -127,3 +127,47 @@ body {
     display: block;
   }
 }
+
+/* Hero Section */
+
+        .hero {
+            background-image: url('https://www.superiorwallpapers.com/download/many-autumn-products-fruits-wallpaper-1680x945.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+            margin:20px;
+            width: 60%;
+            height:40%;
+        }
+
+        .button {
+            background-color: transparent;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            border: 2px solid white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover{
+            background-color: white;
+            color: #3c763d;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+
+        }
