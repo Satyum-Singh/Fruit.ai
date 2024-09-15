@@ -4,8 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/styles.css')}}"
+    />
   </head>
   <body>
-    <h2>About Page</h2>
+    <div class="hero"></div>
+    <img src="https://images.unsplash.com/photo-1556745754-8b15c4c7a9a4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="Fruit Orchard">
+    <h1>About Us</h1>
+  </div>
+  <div class="company">
+    <h2>Our Mission</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+  </div>
+  <div class="team">
+    <h2>Meet the Team</h2>
+    <div class="team-member">
+      <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="John Doe">
+      <h3>John Doe</h3>
+      <p>Founder & CEO. John has over 10 years of experience in the tech industry and is passionate about creating innovative solutions.</p>
+    </div>
+    <div class="team-member">
+      <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Jane Doe">
+      <h3>Jane Doe</h3>
+      <p>Co-Founder & CMO. Jane is an expert in marketing and branding, and is dedicated to building strong relationships with our customers.</p>
+    </div>
+    
+  </div>
+  <div class="motto">
+    <h2>Our Motto</h2>
+    <p>"Fresh ideas, ripe results."</p>
+  </div>
   </body>
 </html>
