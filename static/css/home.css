@@ -11,22 +11,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #F7F7F7; 
-}
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color:#12192c;
   background-color: #F7F7F7; 
 }
@@ -42,7 +26,7 @@ body {
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(10px);
-  border-bottom: 3px solid #3c763d;
+  border-bottom: 2px solid #3c763d;
   border-radius: 0 0 20px 20px;
   z-index: 100;
 }
@@ -130,44 +114,90 @@ body {
 
 /* Hero Section */
 
-        .hero {
-            background-image: url('https://www.superiorwallpapers.com/download/many-autumn-products-fruits-wallpaper-1680x945.jpg'); 
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 150px 0;
+
+        .hero h1 {
+            font-size: 36px;
+            width: 100%;
+            margin-top:120px;
+            margin-left:100px;
+            text-align: left;
+            font-weight: 500;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
         }
 
-        h1 {
-            font-size: 4em;
-            margin-bottom: 1em;
-        }
-
-        p {
-            font-size: 20px;
+        .hero p {
+            margin-top: 35px ;
+            font-size: 16px;
             line-height: 1.5;
-            margin:20px;
-            width: 60%;
-            height:40%;
+            letter-spacing: 2px;
+            margin-left:100px;
+            text-align: left;
+            width: 45%;
+            height:auto;
+            margin-bottom: 30px;
+            font-weight: 100;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .other{
+          display: flex;
+          flex-direction: row;
+          width: 40%;
+          align-items: left;
+          justify-content: flex-start;
+          margin-left:100px;
+          gap: 15px;
         }
 
         .button {
             background-color: transparent;
             color: white;
-            padding: 15px 30px;
-            border: none;
+            padding: 8px 24px;
+            width: auto;
             border-radius: 5px;
-            border: 2px solid white;
+            border: 1px solid white;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             transition: background-color 0.3s ease;
         }
 
         .button:hover{
             background-color: white;
-            color: #3c763d;
+            color: #12192c;
             transition: background-color 0.3s ease;
-            font-weight: 600;
-
         }
+
+
+        /* Footer */
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 100px;
+  color:#12192c;
+  background: #dfffdf;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-top: 2px solid #3c763d;
+  border-radius: 0 0 20px 20px;
+  z-index: 100;
+}
+
+.social-media a{
+  color: #3c763d;
+    padding: 5px;
+    margin: 0 10px; 
+}
+
+.social-media a i {
+    font-size: 26px;
+    opacity: 0.8;
+}
+
+.social-media a i:hover {
+    color: #12192c;
+    cursor: pointer;
+}

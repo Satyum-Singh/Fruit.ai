@@ -10,6 +10,17 @@
     />
   </head>
   <body>
+    <header class="header">
+      <a href="#" class="logo">Fruit.AI</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="{{ url_for("index")}}">Home</a>
+        <a href="{{ url_for("about")}}">About</a>
+        <a href="{{ url_for("chatbot")}}">Chatbot</a>
+        <a href="{{ url_for("faqs")}}">Faqs</a>
+        <a href="{{ url_for("login")}}">Login</a>
+      </nav>
+    </header>
     <div class="wrapper">
       <h2>Registration</h2>
       <form method="post">
@@ -67,5 +78,15 @@
         </div>
       </form>
     </div>
+
+    <footer class="footer">
+      <p> 2024 Fruit.AI. All rights reserved.</p>
+      <div class="social-media">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-youtube"></i></a>
+      </div>
+    </footer>
   </body>
 </html>
