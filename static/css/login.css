@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7F7F7; 
+}
+
+
+/* Login Page */
+
+.container {
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.login-form {
+  margin-top: 30px;
+}
+
+.login-form h2 {
+  position: relative;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #333;
+}
+
+.login-form h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 25px;
+  border-radius: 12px;
+  background: #9d40f4;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  height: 52px;
+  width: 100%;
+  margin: 8px 0;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus,
+.login-form input[type="text"]:valid,
+.login-form input[type="password"]:valid {
+  border-color: #9d40f4;
+}
+
+#login-btn {
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  background: #9d40f4;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 6px;
+  display: block;
+      margin: 16px auto;
+      width: 100%;
+}
+
+#login-btn:hover {
+  background: #0e4bf1;
+}
+
+#error-msg {
+  color: red;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.login-form p {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.login-form p a {
+  color: #9d40f4;
+  text-decoration: none;
+}
+
+.login-form p a:hover {
+  text-decoration: underline;
+}
+
+.toastr {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.toastr.success {
+    background-color: #dff0df;
+    border-color: #c6f7c6;
+    color: #3c763d;
+}

@@ -3,13 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fruit.ai</title>
+    <title>Fruit.AI</title>
+
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles.css') }}"
+      href="{{ url_for('static', filename='css/navbar.css') }}"
     />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
+    <header class="header">
+      <a href="#" class="logo">Fruit.AI</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="{{ url_for("index")}}">Home</a>
+        <a href="{{ url_for("about")}}">About</a>
+        <a href="{{ url_for("chatbot")}}">Chatbot</a>
+        <a href="{{ url_for("faqs")}}">Faqs</a>
+        <a href="{{ url_for("login")}}">Login</a>
+      </nav>
+    </header>
+    <div class="nav-bg"></div>
     <h1>Welcome to Fruit.ai</h1>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
   </body>

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7F7F7; 
+}
+
+/* About Us page */
+
+section {
+    display: grid;
+    background-color: #3c763d;
+    color: #c6f7c6;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+    width: 75vw;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+}
+
+.image {
+    background-color: #12192c;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.image img {
+    height: 50vh;
+    margin: 0; 
+}
+
+.ice-cream {
+    position: relative;
+    display: block; 
+}
+
+.content {
+    background-color: #c6f7c6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3c763d;
+    height: 100%;
+    padding: 20px; 
+}
+
+.content h2 {
+    text-transform: uppercase;
+    color: #12192c;
+    font-size: 36px;
+    letter-spacing: 6px;
+    opacity: 0.9;
+}
+
+.content span {
+    height: 0.5px;
+    width: 80px;
+    background: #777;
+    margin-top: 10px;
+    margin-bottom:20px;
+}
+
+.content p {
+    padding-bottom: 15px;
+    font-weight: 500;
+    opacity: 0.7;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #3c763d;
+}
+
+.motto{
+  padding-top: 20px;
+}
+
+.bottom {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center; 
+    
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    list-style: none; 
+}
+
+.navi{
+  background-color: #12192c;
+  color: #c6f7c6;
+  display: flex;
+    align-items: center;
+    justify-content: center; 
+    list-style: none;
+}
+
+.navi a{
+  display: block;
+    padding: 5px;
+    margin: 0 10px;
+    color: #c6f7c6;
+    text-decoration: none;
+    outline: none;
+}
+
+.icons li {
+    display: block;
+    padding: 5px;
+    margin: 0 10px; 
+}
+
+.icons li i {
+    font-size: 26px;
+    opacity: 0.8;
+}
+
+.icons li i:hover {
+    color: #12192c;
+    cursor: pointer;
+}
