@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/faqs.css') }}">
+    <script src="{{ url_for('static', filename='js/faqs.js') }}"></script>
   </head>
   <body>
+    <!-- Header -->
     <header class="header">
       <a href="#" class="logo">Fruit.AI</a>
       <i class="bx bx-menu" id="menu-icon"></i>
@@ -13,12 +16,42 @@
         <a href="{{ url_for("index")}}">Home</a>
         <a href="{{ url_for("about")}}">About</a>
         <a href="{{ url_for("chatbot")}}">Chatbot</a>
-        <a href="{{ url_for("faqs")}}">Faqs</a>
+        <a href="{{ url_for('faqs')}}">Faqs</a>
         <a href="{{ url_for("login")}}">Login</a>
       </nav>
     </header>
-    <h2>FAQs Page</h2>
 
+    <!-- Main Content -->
+    <div class="main">
+      <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <div id="faq-list">
+        {% for faq in questions %}
+          <div class="faq">
+            <div class="collapsible">
+              {{ faq.question }}
+            </div>
+            <div class="content">
+              <p>{{ faq.answer }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      </div>
+
+      <div class="container-2">
+      <h2>Ask a Question</h2>
+        <form action="/faqs" method="post">
+          <label for="question">Question:</label><br>
+          <textarea id="question" name="question" rows="4" cols="50"></textarea><br><br>
+          <label for="answer">Answer:</label><br>
+          <textarea id="answer" name="answer" rows="4" cols="50"></textarea><br><br>
+          <button type="submit">Add Question</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
       <p> 2024 Fruit.AI. All rights reserved.</p>
       <div class="social-media">

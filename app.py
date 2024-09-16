@@ -14,7 +14,7 @@ def login():
             return render_template('login.html', error_msg=error_msg)
     return render_template('login.html')
 
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup', methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
         name = request.form['name']
@@ -45,7 +45,7 @@ def signup():
 def index():
     return render_template('index.html')
 
-@app.route('/logout', methods=['GET'])
+@app.route('/logout')
 def logout():
     return redirect(url_for('login'))
 
@@ -53,9 +53,21 @@ def logout():
 def about():
     return render_template('about.html')
 
-@app.route('/faqs')
+# In-memory FAQ storage (no database)
+arr = [
+    {'question': 'What is Flask?', 'answer': 'Flask is a micro web framework written in Python.'},
+    {'question': 'What is Python?', 'answer': 'Python is a high-level, interpreted programming language.'},
+]
+@app.route('/faqs', methods=['GET'])
 def faqs():
-    return render_template('faqs.html')
+    return render_template('faqs.html', question=arr)
+
+@app.route('/faqs', methods=['POST'])
+def add_faqs():
+    global arr
+    data = request.form
+    arr.append({'question': data['question'], 'answer': data['answer']})
+    return redirect(url_for('faqs'))
 
 @app.route('/chatbot')
 def chatbot():
