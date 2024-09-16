@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQs</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/faqs.css') }}">
-    <script src="{{ url_for('static', filename='js/faqs.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body>
     <!-- Header -->
@@ -22,34 +22,38 @@
     </header>
 
     <!-- Main Content -->
-    <div class="main">
-      <div class="container">
-      <h1>Frequently Asked Questions</h1>
-      <div id="faq-list">
-        {% for faq in questions %}
-          <div class="faq">
-            <div class="collapsible">
-              {{ faq.question }}
-            </div>
-            <div class="content">
-              <p>{{ faq.answer }}</p>
-            </div>
+<div class="main">
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+    <div id="faq-list">
+      {% for faq in questions %}
+        <div class="faq">
+          <div class="collapsible">
+            {{ faq.question }}
           </div>
-        {% endfor %}
-      </div>
-      </div>
-
-      <div class="container-2">
-      <h2>Ask a Question</h2>
-        <form action="/faqs" method="post">
-          <label for="question">Question:</label><br>
-          <textarea id="question" name="question" rows="4" cols="50"></textarea><br><br>
-          <label for="answer">Answer:</label><br>
-          <textarea id="answer" name="answer" rows="4" cols="50"></textarea><br><br>
-          <button type="submit">Add Question</button>
-        </form>
-      </div>
+          <div class="content">
+            <p>{{ faq.answer }}</p>
+            <button class="update-btn" data-id="{{ loop.index0 }}">Update</button>
+            <button class="delete-btn" data-id="{{ loop.index0 }}">Delete</button>
+          </div>
+        </div>
+      {% endfor %}
     </div>
+  </div>
+
+  <div class="container-2">
+    <h2 id="form-title">Add a Question</h2>
+    <form id="faq-form" action="/faqs" method="post">
+      <input type="hidden" id="faq-id" name="id" value="">
+      <label for="question">Question:</label><br>
+      <textarea id="question" name="question" rows="4" cols="50"></textarea><br><br>
+      <label for="answer">Answer:</label><br>
+      <textarea id="answer" name="answer" rows="4" cols="50"></textarea><br><br>
+      <button type="submit" id="submit-btn">Add Question</button>
+    </form>
+  </div>
+</div>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -61,5 +65,7 @@
         <a href="#"><i class="bx bxl-youtube"></i></a>
       </div>
     </footer>
+
+    <script src="{{ url_for('static', filename='js/faqs.js') }}"></script>
   </body>
 </html>

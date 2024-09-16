@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 app = Flask(__name__)
 
@@ -55,19 +55,36 @@ def about():
 
 # In-memory FAQ storage (no database)
 arr = [
-    {'question': 'What is Flask?', 'answer': 'Flask is a micro web framework written in Python.'},
-    {'question': 'What is Python?', 'answer': 'Python is a high-level, interpreted programming language.'},
+    {'question': 'What is fruit.ai best for its services?', 'answer': 'becuase of proper and time to time customer support'},
+    {'question': 'What is mango?', 'answer': 'Mango is yellow fibrous fruit and comes in diff shapes,sizes & types.'},
 ]
+
 @app.route('/faqs', methods=['GET'])
 def faqs():
-    return render_template('faqs.html', question=arr)
+    return render_template('faqs.html', questions=arr)
 
 @app.route('/faqs', methods=['POST'])
-def add_faqs():
-    global arr
+def add_or_update_faq():
     data = request.form
-    arr.append({'question': data['question'], 'answer': data['answer']})
+    faq_id = data.get('id')
+    
+    if faq_id:
+        # Update existing FAQ
+        faq_id = int(faq_id)
+        arr[faq_id] = {'question': data['question'], 'answer': data['answer']}
+    else:
+        # Add new FAQ
+        arr.append({'question': data['question'], 'answer': data['answer']})
+    
     return redirect(url_for('faqs'))
+
+@app.route('/faqs/<int:faq_id>', methods=['DELETE'])
+def delete_faq(faq_id):
+    global arr
+    if 0 <= faq_id < len(arr):
+        arr.pop(faq_id)
+        return '', 204
+    return '', 404
 
 @app.route('/chatbot')
 def chatbot():
