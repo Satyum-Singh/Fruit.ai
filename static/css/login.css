@@ -236,18 +236,17 @@ body {
   left: 0;
   width: 100%;
   padding: 10px 100px;
-  color:#12192c;
-  background: #dfffdf;
+  color:#c6f7c6;
+  background-color: #12192c;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   backdrop-filter: blur(10px);
-  border-top: 2px solid #3c763d;
-  border-radius: 0 0 20px 20px;
   z-index: 100;
 }
 
 .social-media a{
+  display: none;
   color: #3c763d;
     padding: 5px;
     margin: 0 10px; 

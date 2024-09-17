@@ -226,32 +226,11 @@ button:hover {
        /* Footer */
 .footer{
   position: fixed;
-  bottom: 0;
+  bottom: -60px;
   left: 0;
   width: 100%;
   padding-left:100px;
   color:#dfffdf;
-  background: #12192c;
-  display: flex;
-  justify-content: space-between;
+  background-color: #12192c;
   align-items: left;
-  z-index: 100;
-}
-
-.social-media a{
-    color: #dfffdf;
-    margin: 0 10px; 
-    display: none;
-}
-
-.social-media a i {
-    background-color: #c6f7c6;
-    font-size: 26px;
-    opacity: 0.8;
-    
-}
-
-.social-media a i:hover {
-    color: #3c763d;
-    cursor: pointer;
 }

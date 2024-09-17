@@ -252,6 +252,7 @@ section {
     color: #dfffdf;
     padding: 5px;
     margin: 0 10px; 
+    display: none;
 }
 
 .social-media a i {
