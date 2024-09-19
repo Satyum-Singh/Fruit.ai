@@ -1,6 +1,18 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for, jsonify, json
 
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/logout')
+def logout():
+    return redirect(url_for('login'))
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -41,18 +53,6 @@ def signup():
             return redirect(url_for('index'))
     return render_template('signup.html')
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/logout')
-def logout():
-    return redirect(url_for('login'))
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
 # In-memory FAQ storage (no database)
 arr = [
     {'question': 'What is fruit.ai best for its services?', 'answer': 'becuase of proper and time to time customer support'},
@@ -69,11 +69,9 @@ def add_or_update_faq():
     faq_id = data.get('id')
     
     if faq_id:
-        # Update existing FAQ
         faq_id = int(faq_id)
         arr[faq_id] = {'question': data['question'], 'answer': data['answer']}
     else:
-        # Add new FAQ
         arr.append({'question': data['question'], 'answer': data['answer']})
     
     return redirect(url_for('faqs'))
@@ -89,6 +87,18 @@ def delete_faq(faq_id):
 @app.route('/chatbot')
 def chatbot():
     return render_template('chatbot.html')
+
+with open('fruit.json') as f:
+    fruits = json.load(f)
+
+@app.route('/get_fruit_info', methods=['GET'])
+def get_fruit_info():
+    fruit_name = request.args.get('fruit_name')
+    fruit_info = get_fruit_info(fruit_name)
+    if fruit_info:
+        return jsonify(fruit_info)
+    else:
+        return jsonify({'error': 'Fruit not found'})
 
 if __name__ == '__main__':
     app.run(debug=True)

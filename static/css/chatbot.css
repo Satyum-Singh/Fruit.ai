@@ -112,6 +112,54 @@ body {
   }
 }
 
+main h2{
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight:700;
+    text-decoration: none;
+    transition: 0.3s;
+    color: #12192c;
+}
+
+main h2 span{
+    background: -webkit-linear-gradient(left, #FFE000, #799F0C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main form input{
+    width: 45%;
+    padding: 6px 16px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    background-color: #e8e8e8;
+    opacity: 0.6;
+}
+
+.search-form{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 20px;
+}
+
+.options{
+    /* display: grid; */
+    /* align-items: center; */
+    gap: 20px;
+    width:70%;
+    margin-left:300px;
+}
+
+.options button{
+margin:5px 8px;
+}
+
 
 /* Footer */
 .footer{
