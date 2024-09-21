@@ -149,11 +149,11 @@ main form input{
 }
 
 .options{
-    /* display: grid; */
-    /* align-items: center; */
-    gap: 20px;
+    display: flex;
+    align-items: center;
+    /* gap: 20px; */
     width:70%;
-    margin-left:300px;
+    margin-left:100px;
 }
 
 .options button{

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Apple",
+    "description": "A juicy red fruit with a sweet and crunchy texture, rich in antioxidants and fiber.",
+    "image": "apple.jpg"
+  },
+  {
+    "name": "Banana",
+    "description": "A yellow curved fruit with a soft and creamy texture, rich in potassium and vitamins.",
+    "image": "banana.jpg"
+  },
+  {
+    "name": "Mango",
+    "description": "A yellow fibrous fruit with a sweet and tangy taste, rich in vitamins A and C.",
+    "image": "mango.jpg"
+  },
+  {
+    "name": "Mulberry",
+    "description": "A sweet and juicy fruit with a dark purple color, rich in antioxidants and fiber.",
+    "image": "mulberry.jpg"
+  },
+  {
+    "name": "Kiwi",
+    "description": "A small and furry fruit with a sweet and tangy taste, rich in vitamin C and potassium.",
+    "image": "kiwi.jpg"
+  },
+  {
+    "name": "Cherry",
+    "description": "A small and round fruit with a sweet and tart taste, rich in antioxidants and fiber.",
+    "image": "cherry.jpg"
+  },
+  {
+    "name": "Grapes",
+    "description": "A small and round fruit with a sweet and juicy taste, rich in antioxidants and fiber.",
+    "image": "grapes.jpg"
+  },
+  {
+    "name": "Guava",
+    "description": "A tropical fruit with a sweet and tangy taste, rich in vitamin C and fiber.",
+    "image": "guava.jpg"
+  },
+  {
+    "name": "JackFruit",
+    "description": "A large and green fruit with a sweet and slightly tangy taste, rich in vitamins and minerals.",
+    "image": "jackfruit.jpg"
+  },
+  {
+    "name": "Lemon",
+    "description": "A sour and citrusy fruit with a high concentration of vitamin C, often used in cooking and cleaning.",
+    "image": "lemon.jpg"
+  },
+  {
+    "name": "Orange",
+    "description": "A juicy and sweet fruit with a high concentration of vitamin C, often eaten fresh or juiced.",
+    "image": "orange.jpg"
+  },
+  {
+    "name": "Pineapple",
+    "description": "A tropical fruit with a sweet and tangy taste, rich in vitamin C and manganese.",
+    "image": "pineapple.jpg"
+  },
+  {
+    "name": "Peach",
+    "description": "A sweet and juicy fruit with a soft and fuzzy skin, rich in vitamins and minerals.",
+    "image": "peach.jpg"
+  },
+  {
+    "name": "Pear",
+    "description": "A sweet and buttery fruit with a soft and smooth skin, rich in fiber and vitamins.",
+    "image": "pear.jpg"
+  }
+]

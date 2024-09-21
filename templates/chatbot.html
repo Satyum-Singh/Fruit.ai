@@ -22,46 +22,25 @@
     <main>
       <h2>Welcome to <span>FruitBot</span></h2>
       <form class="search-form">
-        <input type="text" name="search-item" value="Enter the name of the fruit ...">
-        <button type="button" class="btn btn-outline-success" >Success</button>
+        <input type="text" id="search-input" name="search-item" placeholder="Enter the fruit name ...">
+        <button type="button" id="search-button" class="btn btn-outline-success" >Search</button>
+        <div id="google_translate_element"></div>
       </form>
       <div class="options">
-        <button type="button" class="btn btn-outline-secondary">Mulberry</button>
-        <button type="button" class="btn btn-outline-secondary">Kiwi</button>
-        <button type="button" class="btn btn-outline-secondary">Apple</button>
-        <button type="button" class="btn btn-outline-secondary">Mango</button>
-        <button type="button" class="btn btn-outline-secondary">Banana</button>
-        <button type="button" class="btn btn-outline-secondary">Cherry</button>
-        <button type="button" class="btn btn-outline-secondary">Grapes</button>
-        <button type="button" class="btn btn-outline-secondary">Guava</button>
-        <button type="button" class="btn btn-outline-secondary">JackFruit</button>
-        <button type="button" class="btn btn-outline-secondary">Lemon</button>
-        <button type="button" class="btn btn-outline-secondary">Orange</button>
-        <button type="button" class="btn btn-outline-secondary">Plum</button>
-        <button type="button" class="btn btn-outline-secondary">Peach</button>
-        <button type="button" class="btn btn-outline-secondary">Pineapple</button>
-        <button type="button" class="btn btn-outline-secondary">Lichi</button>
-        <button type="button" class="btn btn-outline-secondary">Amla</button>
-        <button type="button" class="btn btn-outline-secondary">Mulberry</button>
-        <button type="button" class="btn btn-outline-secondary">Kiwi</button>
-        <button type="button" class="btn btn-outline-secondary">Apple</button>
-        <button type="button" class="btn btn-outline-secondary">Mango</button>
-        <button type="button" class="btn btn-outline-secondary">Banana</button>
-        <button type="button" class="btn btn-outline-secondary">Cherry</button>
-        <button type="button" class="btn btn-outline-secondary">Grapes</button>
-        <button type="button" class="btn btn-outline-secondary">Guava</button>
-        <button type="button" class="btn btn-outline-secondary">JackFruit</button>
-        <button type="button" class="btn btn-outline-secondary">Lemon</button>
-        <button type="button" class="btn btn-outline-secondary">Orange</button>
-        <button type="button" class="btn btn-outline-secondary">Plum</button>
-        <button type="button" class="btn btn-outline-secondary">Peach</button>
-        <button type="button" class="btn btn-outline-secondary">Pineapple</button>
-        <button type="button" class="btn btn-outline-secondary">Lichi</button>
-        <button type="button" class="btn btn-outline-secondary">Amla</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Mulberry">Mulberry</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Kiwi">Kiwi</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Apple">Apple</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Mango">Mango</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Banana">Banana</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Cherry">Cherry</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Grapes">Grapes</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Guava">Guava</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="JackFruit">JackFruit</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Lemon">Lemon</button>
+        <button type="button" class="btn btn-outline-secondary" data-fruit-name="Orange">Orange</button>
       </div>
       <div class="chat">
-        <div class="ques"></div>
-        <div class="ans"></div>
+        <div id="fruit-info" class="ans"></div>
       </div>
     </main>
 
@@ -69,32 +48,57 @@
       <p> 2024 Fruit.AI. All rights reserved.</p>
     </footer>
     <script>
-  function getFruitInfo(fruitName) {
-    // Call the get_fruit_info function using AJAX
-    $.ajax({
-      type: 'GET',
-      url: '/get_fruit_info',
-      data: {fruit_name: fruitName},
-      success: function(data) {
-        // Display the fruit information in the chat window
-        $('.ans').html(data.description);
-        $('.ques').html(data.name);
-      }
-    });
-  }
+      // Search Bar functionality 
+      const searchInput = document.getElementById('search-input');
+      const searchButton = document.getElementById('search-button');
+      searchButton.addEventListener('click', () => {
+        const fruitName = searchInput.value.trim();
+        if (fruitName) {
+          fetch('/get_fruit_info?fruit_name=' + fruitName)
+            .then(response => response.json())
+            .then(data => {
+              if (data.error) {
+                document.getElementById('fruit-info').innerHTML = `
+                <h2>Fruit is out of stock</h2>
+                <p>Sorry, we don't have ${fruitName} in stock.</p>
+                `;
+              } else {
+                  const fruitInfo = data;
+                  document.getElementById('fruit-info').innerHTML = `
+                  <h2>${fruitInfo.name}</h2>
+                  <p>${fruitInfo.description}</p>
+                  <img src="${fruitInfo.image}" alt="${fruitInfo.name}">
+                `;
+              }})
+            .catch(error => console.error(error));
+        }
+      });
 
-  // Call the getFruitInfo function when a fruit name is typed in the input box
-  $('#search-item').on('keyup', function() {
-    var fruitName = $(this).val();
-    getFruitInfo(fruitName);
-  });
+      // FruitButton Functionality
+      const fruitButtons = document.querySelectorAll('.options button');
+      fruitButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const fruitName = button.getAttribute('data-fruit-name');
+          fetch('/get_fruit_info?fruit_name=' + fruitName)
+            .then(response => response.json())
+            .then(data => {
+              const fruitInfo = data;
+              // Display the fruit information on the UI
+              document.getElementById('fruit-info').innerHTML = `
+                <h2>${fruitInfo.name}</h2>
+                <p>${fruitInfo.description}</p>
+              `;
+            })
+            .catch(error => console.error(error));
+        });
+      });
 
-  // Call the getFruitInfo function when a fruit button is clicked
-  $('.options button').on('click', function() {
-    var fruitName = $(this).text();
-    getFruitInfo(fruitName);
-  });
-</script>
+      // For google translate
+        function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -88,17 +88,22 @@ def delete_faq(faq_id):
 def chatbot():
     return render_template('chatbot.html')
 
-with open('fruit.json') as f:
-    fruits = json.load(f)
-
 @app.route('/get_fruit_info', methods=['GET'])
 def get_fruit_info():
     fruit_name = request.args.get('fruit_name')
-    fruit_info = get_fruit_info(fruit_name)
+    fruit_info = None
+
+    with open('fruit.json') as f:
+        fruits = json.load(f)
+        for fruit in fruits:
+            if fruit['name'].lower() == fruit_name.lower():
+                fruit_info = fruit
+                break
+
     if fruit_info:
         return jsonify(fruit_info)
     else:
-        return jsonify({'error': 'Fruit not found'})
+        return jsonify({'error': 'Fruit is out of stock'})
 
 if __name__ == '__main__':
     app.run(debug=True)
